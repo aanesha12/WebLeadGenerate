@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Lead</title>
+  <style>
+    /* Container to align the form in the center */
+    .form-container {
+      width: 50%;
+      margin: 0 auto;
+    }
+    /* Form grid layout */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px; /* Space between the columns */
+    }
+    /* Make input and select fields span full width of their grid cell */
+    .form-grid input,
+    .form-grid select {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    /* Align the submit button below the form fields */
+    .form-actions {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+     /* Add an asterisk (*) for required fields */
+  label.required::after {
+    content: ' *';
+    color: red;
+    font-weight: bold;
+  }
+  label.full-width::after {
+    content: ' *';
+    color: red;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DDz000001qi9o" method="POST">
+    <input type="hidden" name="oid" value="00DDz000001qi9o">
+    <input type="hidden" name="retURL" value="http://nosoftware-platform-9837--ppgdev.sandbox.lightning.force.com">
+    <div class="form-container">
+      <div class="form-grid">
+        <div>
+          <label for="salutation">Salutation</label><select  id="salutation" name="salutation">
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Prof.">Prof.</option>
+            <option value="Mx.">Mx.</option>
+        </div>
+        <div>
+          <label for="first_name" class="required">Contact First Name</label>
+          <input  id="first_name" maxlength="25" name="first_name"  type="text" required>
+          </div>
+        <div>
+          <label for="last_name" class="required">Contact Last Name</label>
+          <input  id="last_name" maxlength="25" name="last_name"  type="text" required>
+        </div>
+        <div>
+          <label for="company" class="required">Company</label>
+          <input id="company" maxlength="40" name="company" type="text" required>
+        </div>
+        <div>
+          <label for="description" class="full-width">Lead Description</label>
+    <textarea name="description" class="full-width" required></textarea>
+          </div>
+        <div>
+          <label for="status" class="required">Lead Status</label>
+  <select id="status" name="status">
+      <option value="	Not Contacted">	Not Contacted</option>
+      <option value="In Progress – Contacted">In Progress – Contacted</option>
+      <option value="Qualified">Qualified</option>
+      <option value="Converted">Converted</option>
+      <!-- Other options -->
+  </select>
+          </div>
+        <div>
+          <label for="lead_source">Lead Source</label>
+            <select id="lead_source" name="lead_source">
+              <option value="Advertisement">Advertisement</option>
+              <option value="Customer Event">Customer Event</option>
+              <option value="Employee Referral">Employee Referral</option>
+              <option value="External Referral">External Referral</option>
+              <option value="Google AdWords">Google AdWords</option>
+              <option value="Other">Other</option>
+              <option value="Partner">Partner</option>
+              <option value="Purchased List">Purchased List</option>
+              <option value="Trade Show">Trade Show</option>
+              <option value="Webinar">Webinar</option>
+              <option value="Website">Website</option>
+        <!-- Other options -->
+    </select>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" maxlength="80" name="email" size="20" type="text" />
+        </div>
+        <div>
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry">
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Food &amp; Beverage">Food &amp; Beverage</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Residential">Residential</option>
+          </select>
+        </div>
+          <div>
+            <label for="rating">Rating</label>
+    <select id="rating" name="rating">
+      <option value="Hot">Hot</option>
+      <option value="Warm">Warm</option>
+      <option value="Cold">Cold</option>
+        <!-- Other options -->
+    </select>
+            </div>
+            <div>
+              <label for="00NDz000005Huat">Type Of Coating</label>
+    <select id="00NDz000005Huat" name="00NDz000005Huat" title="Type Of Coating">
+    <option value="Marine Coating">Marine Coating</option>
+    <option value="Automotive Coating">Automotive Coating</option>
+    <option value="Industrial Coating">Industrial Coating</option>
+    <option value="Architectural Coating">Architectural Coating</option>
+        <!-- Other options -->
+    </select>
+            </div>
+            <div>
+              <label for="00NDz000005Huay">Application Process And End Use</label>
+              <input id="00NDz000005Huay" maxlength="25" name="00NDz000005Huay" type="text">
+            </div>
+            <div>
+              <label for="00NDz000005Hub3">Annual Volume</label>
+    <input id="00NDz000005Hub3" name="00NDz000005Hub3" type="text">
+            </div>
+            <div>
+              <label for="00NDz000005Hub8">Region</label>
+    <select id="00NDz000005Hub8" name="00NDz000005Hub8" title="Region">
+      <option value="APAC">APAC</option>
+      <option value="EMEA">EMEA</option>
+      <option value="North America">North America</option>
+      <option value="LATAM">LATAM</option>
+        <!-- Other options -->
+    </select>
+            </div>
+            <div>
+              <label for="00NDz000005HubD">Start Date</label>
+    <input id="00NDz000005HubD" name="00NDz000005HubD" type="date">
+            </div>
+            <div>
+              <label for="00NDz000005HubI">End Date</label>
+    <input id="00NDz000005HubI" name="00NDz000005HubI" type="date">
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="form-actions">
+        <input type="submit" name="submit" value="Submit">
+      </div>
+    </div>
+  </form>
+</body>
+</html>
