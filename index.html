@@ -43,7 +43,7 @@
 <body>
   <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DDz000001qi9o" method="POST">
     <input type="hidden" name="oid" value="00DDz000001qi9o">
-    <input type="hidden" name="retURL" value="http://nosoftware-platform-9837--ppgdev.sandbox.lightning.force.com">
+    <input type="hidden" name="retURL" value="https://ppg--ppgdev.sandbox.lightning.force.com">
     <div class="form-container">
       <div class="form-grid">
         <div>
@@ -55,62 +55,56 @@
           <input  id="last_name" maxlength="25" name="last_name"  type="text" required>
         </div>
         <div>
+          <label for="title">Title</label>
+          <input  id="title" maxlength="40" name="title" size="20" type="text" />
+        </div>
+        <div>
+          <label for="description" class="full-width">Lead Description</label>
+    <textarea name="description" class="full-width" ></textarea>
+          </div>
+        <div>
           <label for="company" class="required">Company</label>
           <input id="company" maxlength="40" name="company" type="text" required>
         </div>
         <div>
-          <label for="description" class="full-width">Lead Description</label>
-    <textarea name="description" class="full-width" required></textarea>
-          </div>
-        <div>
-          <label for="status" class="required">Lead Status</label>
+          <label for="status" Lead Status</label>
   <select id="status" name="status">
-      <option value="	Not Contacted">	Not Contacted</option>
+      <option value="New" selected>New</option>
+      <option value="Not Contacted">Not Contacted</option>
       <option value="In Progress – Contacted">In Progress – Contacted</option>
+      <option value="Nurturing">Nurturing</option>
       <option value="Qualified">Qualified</option>
       <option value="Converted">Converted</option>
       <!-- Other options -->
   </select>
           </div>
         <div>
-          <label for="lead_source">Lead Source</label>
-            <select id="lead_source" name="lead_source">
-              <option value="Advertisement">Advertisement</option>
-              <option value="Customer Event">Customer Event</option>
-              <option value="Employee Referral">Employee Referral</option>
-              <option value="External Referral">External Referral</option>
-              <option value="Google AdWords">Google AdWords</option>
-              <option value="Other">Other</option>
-              <option value="Partner">Partner</option>
-              <option value="Purchased List">Purchased List</option>
-              <option value="Trade Show">Trade Show</option>
-              <option value="Webinar">Webinar</option>
-              <option value="Website">Website</option>
-        <!-- Other options -->
-    </select>
+          <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source">
+            <option value="">--None--</option>
+            <option value="Self-discovered / Sales call">Self-discovered / Sales call</option>
+            <option value="Trade Show / Event">Trade Show / Event</option>
+            <option value="Customer Service">Customer Service</option>
+            <option value="Marketing Campaigns">Marketing Campaigns</option>
+            <option value="Website" selected>Website</option>
+            <option value="Referral (customer / Partner / Employee)">Referral (customer / Partner / Employee)</option>
+            <option value="3rd party database">3rd party database</option>
+            <option value="LinkedIn Sales Navigator">LinkedIn Sales Navigator</option>
+            <option value="Other">Other</option>
+            </select>
         </div>
         <div>
-          <label for="email">Email</label>
-          <input id="email" maxlength="80" name="email" size="20" type="text" />
+          <label for="email" class="required">Email</label>
+          <input id="email" maxlength="80" name="email" size="20" type="text"  required/>
         </div>
         <div>
-          <label for="industry">Industry</label>
-          <select id="industry" name="industry">
-            <option value="Manufacturing">Manufacturing</option>
-            <option value="Food &amp; Beverage">Food &amp; Beverage</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Residential">Residential</option>
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating">
+              <option value="Hot" selected>Hot</option>
+              <option value="Warm">Warm</option>
+              <option value="Cold">Cold</option>
+              <!-- Other options -->
           </select>
-        </div>
-          <div>
-            <label for="rating">Rating</label>
-    <select id="rating" name="rating">
-      <option value="Hot">Hot</option>
-      <option value="Warm">Warm</option>
-      <option value="Cold">Cold</option>
-        <!-- Other options -->
-    </select>
-            </div>
+      </div>
             <div>
               <label for="00NDz000005Hub3">Annual Volume</label>
     <input id="00NDz000005Hub3" name="00NDz000005Hub3" type="text">
